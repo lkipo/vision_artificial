@@ -36,11 +36,14 @@ while(1):
     satmax = cv.getTrackbarPos('Saturation_max', 'deslizadores')
     valmin = cv.getTrackbarPos('Value_min', 'deslizadores')
     valmax = cv.getTrackbarPos('Value_max', 'deslizadores')
-
+    
+    
     # Creamos copia da imaxe en hsv
     hsv = cv.cvtColor(image, cv.COLOR_BGR2HSV)
 
     # Creamos máscara
-    mask = cv.inRange(image, hmin, hmax)
+    mask = cv.inRange(hsv, np.array([hmin, satmin, valmin]), np.array([hmax, satmax, valmax]))
 
     res = cv.bitwise_and(image, image, mask=mask)
+    
+    cv.imshow('máscara', res)
