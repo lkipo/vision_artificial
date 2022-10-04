@@ -9,7 +9,7 @@ def nothing(x):
 
 # Creamos ventana 
 cv.namedWindow('deslizadores')
-cv.resizeWindow('deslizadores', 100, 300) # CAMBIAR ESTO
+# cv.resizeWindow('deslizadores', 100, 300) # CAMBIAR ESTO
 
 # Creamos trackbars
 cv.createTrackbar('Hue_min', 'deslizadores', 0, 255, nothing)
@@ -36,3 +36,11 @@ while(1):
     satmax = cv.getTrackbarPos('Saturation_max', 'deslizadores')
     valmin = cv.getTrackbarPos('Value_min', 'deslizadores')
     valmax = cv.getTrackbarPos('Value_max', 'deslizadores')
+
+    # Creamos copia da imaxe en hsv
+    hsv = cv.cvtColor(image, cv.COLOR_BGR2HSV)
+
+    # Creamos máscara
+    mask = cv.inRange(image, hmin, hmax)
+
+    res = cv.bitwise_and(image, image, mask=mask)
