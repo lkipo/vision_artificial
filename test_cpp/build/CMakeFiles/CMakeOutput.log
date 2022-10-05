@@ -1,0 +1,471 @@
+The system is: Linux - 5.19.11-200.fc36.x86_64 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/lkipo/robotica/vision/test_cpp/build/CMakeFiles/3.22.2/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/c++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/lkipo/robotica/vision/test_cpp/build/CMakeFiles/3.22.2/CompilerIdCXX/a.out"
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/lkipo/robotica/vision/test_cpp/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_46bca/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_46bca.dir/build.make CMakeFiles/cmTC_46bca.dir/build
+gmake[1]: Entering directory '/home/lkipo/robotica/vision/test_cpp/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_46bca.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc   -v -o CMakeFiles/cmTC_46bca.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+Target: x86_64-pc-linux-gnu
+Configured with: /tmp/gcc/configure --enable-shared --enable-threads=posix --enable-__cxa_atexit --disable-multilib --enable-languages=c,c++ --enable-clocale=gnu --with-system-zlib --prefix=/opt/gcc-11 : (reconfigured) /tmp/gcc/configure --enable-shared --enable-threads=posix --enable-__cxa_atexit --disable-multilib --enable-languages=c,c++ --enable-clocale=gnu --with-system-zlib --prefix=/opt/gcc-11
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 11.3.1 20220922 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_46bca.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_46bca.dir/'
+ /usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/cc1 -quiet -v -iprefix /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/ /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_46bca.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccXW7APs.s
+GNU C17 (GCC) version 11.3.1 20220922 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 11.3.1 20220922, GMP version 6.2.1, MPFR version 4.1.0-p13, MPC version 1.2.1, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../x86_64-pc-linux-gnu/include"
+ignoring duplicate directory "/usr/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/11.3.1/include"
+ignoring duplicate directory "/usr/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/11.3.1/include-fixed"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../x86_64-pc-linux-gnu/include"
+ignoring duplicate directory "/usr/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/include
+ /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/include-fixed
+ /usr/local/include
+ /usr/bin/../lib/gcc/../../include
+End of search list.
+GNU C17 (GCC) version 11.3.1 20220922 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 11.3.1 20220922, GMP version 6.2.1, MPFR version 4.1.0-p13, MPC version 1.2.1, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: b6734a625ebed6f5d7f20462b550d5de
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_46bca.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_46bca.dir/'
+ as -v --64 -o CMakeFiles/cmTC_46bca.dir/CMakeCCompilerABI.c.o /tmp/ccXW7APs.s
+GNU assembler version 2.37 (x86_64-redhat-linux) using BFD version version 2.37-36.fc36
+COMPILER_PATH=/usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/:/usr/bin/../libexec/gcc/
+LIBRARY_PATH=/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/:/usr/bin/../lib/gcc/:/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_46bca.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_46bca.dir/CMakeCCompilerABI.c.'
+Linking C executable cmTC_46bca
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_46bca.dir/link.txt --verbose=1
+/usr/bin/cc  -v -rdynamic CMakeFiles/cmTC_46bca.dir/CMakeCCompilerABI.c.o -o cmTC_46bca 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+COLLECT_LTO_WRAPPER=/usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: /tmp/gcc/configure --enable-shared --enable-threads=posix --enable-__cxa_atexit --disable-multilib --enable-languages=c,c++ --enable-clocale=gnu --with-system-zlib --prefix=/opt/gcc-11 : (reconfigured) /tmp/gcc/configure --enable-shared --enable-threads=posix --enable-__cxa_atexit --disable-multilib --enable-languages=c,c++ --enable-clocale=gnu --with-system-zlib --prefix=/opt/gcc-11
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 11.3.1 20220922 (GCC) 
+COMPILER_PATH=/usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/:/usr/bin/../libexec/gcc/
+LIBRARY_PATH=/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/:/usr/bin/../lib/gcc/:/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_46bca' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_46bca.'
+ /usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/collect2 -plugin /usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/liblto_plugin.so -plugin-opt=/usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccKE8hEZ.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_46bca /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crt1.o /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crti.o /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtbegin.o -L/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1 -L/usr/bin/../lib/gcc -L/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../.. CMakeFiles/cmTC_46bca.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtend.o /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_46bca' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_46bca.'
+gmake[1]: Leaving directory '/home/lkipo/robotica/vision/test_cpp/build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/include]
+    add: [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/include-fixed]
+    add: [/usr/local/include]
+    add: [/usr/bin/../lib/gcc/../../include]
+  end of search list found
+  collapse include dir [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/include] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.1/include]
+  collapse include dir [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/include-fixed] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.1/include-fixed]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/bin/../lib/gcc/../../include] ==> [/usr/include]
+  implicit include dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.1/include;/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.1/include-fixed;/usr/local/include;/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/lkipo/robotica/vision/test_cpp/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_46bca/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_46bca.dir/build.make CMakeFiles/cmTC_46bca.dir/build]
+  ignore line: [gmake[1]: Entering directory '/home/lkipo/robotica/vision/test_cpp/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_46bca.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_46bca.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: /tmp/gcc/configure --enable-shared --enable-threads=posix --enable-__cxa_atexit --disable-multilib --enable-languages=c c++ --enable-clocale=gnu --with-system-zlib --prefix=/opt/gcc-11 : (reconfigured) /tmp/gcc/configure --enable-shared --enable-threads=posix --enable-__cxa_atexit --disable-multilib --enable-languages=c c++ --enable-clocale=gnu --with-system-zlib --prefix=/opt/gcc-11]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 11.3.1 20220922 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_46bca.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_46bca.dir/']
+  ignore line: [ /usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/cc1 -quiet -v -iprefix /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/ /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_46bca.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccXW7APs.s]
+  ignore line: [GNU C17 (GCC) version 11.3.1 20220922 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 11.3.1 20220922  GMP version 6.2.1  MPFR version 4.1.0-p13  MPC version 1.2.1  isl version none]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [ignoring duplicate directory "/usr/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/11.3.1/include"]
+  ignore line: [ignoring duplicate directory "/usr/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/11.3.1/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/usr/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [ignoring duplicate directory "/usr/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/include]
+  ignore line: [ /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/include-fixed]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/bin/../lib/gcc/../../include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C17 (GCC) version 11.3.1 20220922 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 11.3.1 20220922  GMP version 6.2.1  MPFR version 4.1.0-p13  MPC version 1.2.1  isl version none]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: b6734a625ebed6f5d7f20462b550d5de]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_46bca.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_46bca.dir/']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_46bca.dir/CMakeCCompilerABI.c.o /tmp/ccXW7APs.s]
+  ignore line: [GNU assembler version 2.37 (x86_64-redhat-linux) using BFD version version 2.37-36.fc36]
+  ignore line: [COMPILER_PATH=/usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/:/usr/bin/../libexec/gcc/]
+  ignore line: [LIBRARY_PATH=/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/:/usr/bin/../lib/gcc/:/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_46bca.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_46bca.dir/CMakeCCompilerABI.c.']
+  ignore line: [Linking C executable cmTC_46bca]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_46bca.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc  -v -rdynamic CMakeFiles/cmTC_46bca.dir/CMakeCCompilerABI.c.o -o cmTC_46bca ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/lto-wrapper]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: /tmp/gcc/configure --enable-shared --enable-threads=posix --enable-__cxa_atexit --disable-multilib --enable-languages=c c++ --enable-clocale=gnu --with-system-zlib --prefix=/opt/gcc-11 : (reconfigured) /tmp/gcc/configure --enable-shared --enable-threads=posix --enable-__cxa_atexit --disable-multilib --enable-languages=c c++ --enable-clocale=gnu --with-system-zlib --prefix=/opt/gcc-11]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 11.3.1 20220922 (GCC) ]
+  ignore line: [COMPILER_PATH=/usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/:/usr/bin/../libexec/gcc/]
+  ignore line: [LIBRARY_PATH=/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/:/usr/bin/../lib/gcc/:/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_46bca' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_46bca.']
+  link line: [ /usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/collect2 -plugin /usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/liblto_plugin.so -plugin-opt=/usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccKE8hEZ.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_46bca /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crt1.o /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crti.o /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtbegin.o -L/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1 -L/usr/bin/../lib/gcc -L/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../.. CMakeFiles/cmTC_46bca.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtend.o /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crtn.o]
+    arg [/usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccKE8hEZ.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_46bca] ==> ignore
+    arg [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crt1.o] ==> obj [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crt1.o]
+    arg [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crti.o] ==> obj [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crti.o]
+    arg [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtbegin.o] ==> obj [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtbegin.o]
+    arg [-L/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1] ==> dir [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1]
+    arg [-L/usr/bin/../lib/gcc] ==> dir [/usr/bin/../lib/gcc]
+    arg [-L/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64] ==> dir [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../..] ==> dir [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../..]
+    arg [CMakeFiles/cmTC_46bca.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtend.o] ==> obj [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtend.o]
+    arg [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crtn.o] ==> obj [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crtn.o]
+  collapse obj [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
+  collapse obj [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
+  collapse obj [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtbegin.o] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtbegin.o]
+  collapse obj [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtend.o] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtend.o]
+  collapse obj [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crtn.o] ==> [/usr/lib64/crtn.o]
+  collapse library dir [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.1]
+  collapse library dir [/usr/bin/../lib/gcc] ==> [/usr/lib/gcc]
+  collapse library dir [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64] ==> [/usr/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../..] ==> [/usr/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit objs: [/usr/lib64/crt1.o;/usr/lib64/crti.o;/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtbegin.o;/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtend.o;/usr/lib64/crtn.o]
+  implicit dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.1;/usr/lib/gcc;/usr/lib64;/lib64;/usr/lib]
+  implicit fwks: []
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/lkipo/robotica/vision/test_cpp/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_49768/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_49768.dir/build.make CMakeFiles/cmTC_49768.dir/build
+gmake[1]: Entering directory '/home/lkipo/robotica/vision/test_cpp/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_49768.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++   -v -o CMakeFiles/cmTC_49768.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+Using built-in specs.
+COLLECT_GCC=/usr/bin/c++
+Target: x86_64-pc-linux-gnu
+Configured with: /tmp/gcc/configure --enable-shared --enable-threads=posix --enable-__cxa_atexit --disable-multilib --enable-languages=c,c++ --enable-clocale=gnu --with-system-zlib --prefix=/opt/gcc-11 : (reconfigured) /tmp/gcc/configure --enable-shared --enable-threads=posix --enable-__cxa_atexit --disable-multilib --enable-languages=c,c++ --enable-clocale=gnu --with-system-zlib --prefix=/opt/gcc-11
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 11.3.1 20220922 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_49768.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_49768.dir/'
+ /usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/cc1plus -quiet -v -iprefix /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/ -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_49768.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/cc9pHKgl.s
+GNU C++17 (GCC) version 11.3.1 20220922 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 11.3.1 20220922, GMP version 6.2.1, MPFR version 4.1.0-p13, MPC version 1.2.1, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../x86_64-pc-linux-gnu/include"
+ignoring duplicate directory "/usr/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../include/c++/11.3.1"
+ignoring duplicate directory "/usr/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../include/c++/11.3.1/x86_64-pc-linux-gnu"
+ignoring duplicate directory "/usr/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../include/c++/11.3.1/backward"
+ignoring duplicate directory "/usr/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/11.3.1/include"
+ignoring duplicate directory "/usr/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/11.3.1/include-fixed"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../x86_64-pc-linux-gnu/include"
+ignoring duplicate directory "/usr/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../include/c++/11.3.1
+ /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../include/c++/11.3.1/x86_64-pc-linux-gnu
+ /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../include/c++/11.3.1/backward
+ /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/include
+ /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/include-fixed
+ /usr/local/include
+ /usr/bin/../lib/gcc/../../include
+End of search list.
+GNU C++17 (GCC) version 11.3.1 20220922 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 11.3.1 20220922, GMP version 6.2.1, MPFR version 4.1.0-p13, MPC version 1.2.1, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 676070592067aec93d5beaf1e143b8dc
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_49768.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_49768.dir/'
+ as -v --64 -o CMakeFiles/cmTC_49768.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc9pHKgl.s
+GNU assembler version 2.37 (x86_64-redhat-linux) using BFD version version 2.37-36.fc36
+COMPILER_PATH=/usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/:/usr/bin/../libexec/gcc/
+LIBRARY_PATH=/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/:/usr/bin/../lib/gcc/:/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_49768.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_49768.dir/CMakeCXXCompilerABI.cpp.'
+Linking CXX executable cmTC_49768
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_49768.dir/link.txt --verbose=1
+/usr/bin/c++  -v -rdynamic CMakeFiles/cmTC_49768.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_49768 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/c++
+COLLECT_LTO_WRAPPER=/usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: /tmp/gcc/configure --enable-shared --enable-threads=posix --enable-__cxa_atexit --disable-multilib --enable-languages=c,c++ --enable-clocale=gnu --with-system-zlib --prefix=/opt/gcc-11 : (reconfigured) /tmp/gcc/configure --enable-shared --enable-threads=posix --enable-__cxa_atexit --disable-multilib --enable-languages=c,c++ --enable-clocale=gnu --with-system-zlib --prefix=/opt/gcc-11
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 11.3.1 20220922 (GCC) 
+COMPILER_PATH=/usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/:/usr/bin/../libexec/gcc/
+LIBRARY_PATH=/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/:/usr/bin/../lib/gcc/:/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_49768' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_49768.'
+ /usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/collect2 -plugin /usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/liblto_plugin.so -plugin-opt=/usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccwkGlL9.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_49768 /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crt1.o /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crti.o /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtbegin.o -L/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1 -L/usr/bin/../lib/gcc -L/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../.. CMakeFiles/cmTC_49768.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtend.o /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_49768' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_49768.'
+gmake[1]: Leaving directory '/home/lkipo/robotica/vision/test_cpp/build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../include/c++/11.3.1]
+    add: [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../include/c++/11.3.1/x86_64-pc-linux-gnu]
+    add: [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../include/c++/11.3.1/backward]
+    add: [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/include]
+    add: [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/include-fixed]
+    add: [/usr/local/include]
+    add: [/usr/bin/../lib/gcc/../../include]
+  end of search list found
+  collapse include dir [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../include/c++/11.3.1] ==> [/usr/include/c++/11.3.1]
+  collapse include dir [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../include/c++/11.3.1/x86_64-pc-linux-gnu] ==> [/usr/include/c++/11.3.1/x86_64-pc-linux-gnu]
+  collapse include dir [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../include/c++/11.3.1/backward] ==> [/usr/include/c++/11.3.1/backward]
+  collapse include dir [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/include] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.1/include]
+  collapse include dir [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/include-fixed] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.1/include-fixed]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/bin/../lib/gcc/../../include] ==> [/usr/include]
+  implicit include dirs: [/usr/include/c++/11.3.1;/usr/include/c++/11.3.1/x86_64-pc-linux-gnu;/usr/include/c++/11.3.1/backward;/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.1/include;/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.1/include-fixed;/usr/local/include;/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/lkipo/robotica/vision/test_cpp/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_49768/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_49768.dir/build.make CMakeFiles/cmTC_49768.dir/build]
+  ignore line: [gmake[1]: Entering directory '/home/lkipo/robotica/vision/test_cpp/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_49768.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_49768.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: /tmp/gcc/configure --enable-shared --enable-threads=posix --enable-__cxa_atexit --disable-multilib --enable-languages=c c++ --enable-clocale=gnu --with-system-zlib --prefix=/opt/gcc-11 : (reconfigured) /tmp/gcc/configure --enable-shared --enable-threads=posix --enable-__cxa_atexit --disable-multilib --enable-languages=c c++ --enable-clocale=gnu --with-system-zlib --prefix=/opt/gcc-11]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 11.3.1 20220922 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_49768.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_49768.dir/']
+  ignore line: [ /usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/cc1plus -quiet -v -iprefix /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/ -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_49768.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/cc9pHKgl.s]
+  ignore line: [GNU C++17 (GCC) version 11.3.1 20220922 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 11.3.1 20220922  GMP version 6.2.1  MPFR version 4.1.0-p13  MPC version 1.2.1  isl version none]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [ignoring duplicate directory "/usr/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../include/c++/11.3.1"]
+  ignore line: [ignoring duplicate directory "/usr/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../include/c++/11.3.1/x86_64-pc-linux-gnu"]
+  ignore line: [ignoring duplicate directory "/usr/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../include/c++/11.3.1/backward"]
+  ignore line: [ignoring duplicate directory "/usr/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/11.3.1/include"]
+  ignore line: [ignoring duplicate directory "/usr/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/11.3.1/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/usr/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [ignoring duplicate directory "/usr/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../include/c++/11.3.1]
+  ignore line: [ /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../include/c++/11.3.1/x86_64-pc-linux-gnu]
+  ignore line: [ /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../include/c++/11.3.1/backward]
+  ignore line: [ /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/include]
+  ignore line: [ /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/include-fixed]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/bin/../lib/gcc/../../include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C++17 (GCC) version 11.3.1 20220922 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 11.3.1 20220922  GMP version 6.2.1  MPFR version 4.1.0-p13  MPC version 1.2.1  isl version none]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 676070592067aec93d5beaf1e143b8dc]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_49768.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_49768.dir/']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_49768.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc9pHKgl.s]
+  ignore line: [GNU assembler version 2.37 (x86_64-redhat-linux) using BFD version version 2.37-36.fc36]
+  ignore line: [COMPILER_PATH=/usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/:/usr/bin/../libexec/gcc/]
+  ignore line: [LIBRARY_PATH=/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/:/usr/bin/../lib/gcc/:/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_49768.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_49768.dir/CMakeCXXCompilerABI.cpp.']
+  ignore line: [Linking CXX executable cmTC_49768]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_49768.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++  -v -rdynamic CMakeFiles/cmTC_49768.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_49768 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/lto-wrapper]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: /tmp/gcc/configure --enable-shared --enable-threads=posix --enable-__cxa_atexit --disable-multilib --enable-languages=c c++ --enable-clocale=gnu --with-system-zlib --prefix=/opt/gcc-11 : (reconfigured) /tmp/gcc/configure --enable-shared --enable-threads=posix --enable-__cxa_atexit --disable-multilib --enable-languages=c c++ --enable-clocale=gnu --with-system-zlib --prefix=/opt/gcc-11]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 11.3.1 20220922 (GCC) ]
+  ignore line: [COMPILER_PATH=/usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/:/usr/bin/../libexec/gcc/]
+  ignore line: [LIBRARY_PATH=/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/:/usr/bin/../lib/gcc/:/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_49768' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_49768.']
+  link line: [ /usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/collect2 -plugin /usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/liblto_plugin.so -plugin-opt=/usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccwkGlL9.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_49768 /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crt1.o /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crti.o /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtbegin.o -L/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1 -L/usr/bin/../lib/gcc -L/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../.. CMakeFiles/cmTC_49768.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtend.o /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crtn.o]
+    arg [/usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/bin/../libexec/gcc/x86_64-pc-linux-gnu/11.3.1/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccwkGlL9.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_49768] ==> ignore
+    arg [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crt1.o] ==> obj [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crt1.o]
+    arg [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crti.o] ==> obj [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crti.o]
+    arg [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtbegin.o] ==> obj [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtbegin.o]
+    arg [-L/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1] ==> dir [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1]
+    arg [-L/usr/bin/../lib/gcc] ==> dir [/usr/bin/../lib/gcc]
+    arg [-L/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64] ==> dir [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../..] ==> dir [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../..]
+    arg [CMakeFiles/cmTC_49768.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtend.o] ==> obj [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtend.o]
+    arg [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crtn.o] ==> obj [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crtn.o]
+  collapse obj [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
+  collapse obj [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
+  collapse obj [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtbegin.o] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtbegin.o]
+  collapse obj [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtend.o] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtend.o]
+  collapse obj [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64/crtn.o] ==> [/usr/lib64/crtn.o]
+  collapse library dir [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.1]
+  collapse library dir [/usr/bin/../lib/gcc] ==> [/usr/lib/gcc]
+  collapse library dir [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../../../lib64] ==> [/usr/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/bin/../lib/gcc/x86_64-pc-linux-gnu/11.3.1/../../..] ==> [/usr/lib]
+  implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+  implicit objs: [/usr/lib64/crt1.o;/usr/lib64/crti.o;/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtbegin.o;/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.1/crtend.o;/usr/lib64/crtn.o]
+  implicit dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/11.3.1;/usr/lib/gcc;/usr/lib64;/lib64;/usr/lib]
+  implicit fwks: []
+
+
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/lkipo/robotica/vision/test_cpp/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_f902a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f902a.dir/build.make CMakeFiles/cmTC_f902a.dir/build
+gmake[1]: Entering directory '/home/lkipo/robotica/vision/test_cpp/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f902a.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -fPIC  -o CMakeFiles/cmTC_f902a.dir/CheckIncludeFile.c.o -c /home/lkipo/robotica/vision/test_cpp/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_f902a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f902a.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC  -rdynamic CMakeFiles/cmTC_f902a.dir/CheckIncludeFile.c.o -o cmTC_f902a 
+gmake[1]: Leaving directory '/home/lkipo/robotica/vision/test_cpp/build/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
+Change Dir: /home/lkipo/robotica/vision/test_cpp/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_3249c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_3249c.dir/build.make CMakeFiles/cmTC_3249c.dir/build
+gmake[1]: Entering directory '/home/lkipo/robotica/vision/test_cpp/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3249c.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -fPIC  -o CMakeFiles/cmTC_3249c.dir/src.c.o -c /home/lkipo/robotica/vision/test_cpp/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_3249c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3249c.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC  -rdynamic CMakeFiles/cmTC_3249c.dir/src.c.o -o cmTC_3249c 
+gmake[1]: Leaving directory '/home/lkipo/robotica/vision/test_cpp/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
