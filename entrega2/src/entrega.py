@@ -12,8 +12,8 @@ cv.namedWindow('deslizadores')
 # cv.resizeWindow('deslizadores', 100, 300) # CAMBIAR ESTO
 
 # Creamos trackbars
-cv.createTrackbar('Hue_min', 'deslizadores', 0, 255, nothing)
-cv.createTrackbar('Hue_max', 'deslizadores', 0, 255, nothing)
+cv.createTrackbar('Hue_min', 'deslizadores', 0, 180, nothing) # Cambiar o valor máximo a 255 para traballar en espazos distintos a HSV
+cv.createTrackbar('Hue_max', 'deslizadores', 0, 180, nothing) # Cambiar o valor máximo a 255 para traballar en espazos distintos a HSV
 cv.createTrackbar('Saturation_min', 'deslizadores', 0, 255, nothing)
 cv.createTrackbar('Saturation_max', 'deslizadores', 0, 255, nothing)
 cv.createTrackbar('Value_min', 'deslizadores', 0, 255, nothing)
@@ -39,6 +39,8 @@ while(1):
     
     # Creamos copia da imaxe en hsv
     hsv = cv.cvtColor(image, cv.COLOR_BGR2HSV)
+    # hsv = cv.cvtColor(image, cv.COLOR_BGR2LAB) # Descomentar para filtrar en Lab
+    # hsv = image # Descomentar para filtrar en BGR
 
     # Creamos máscara
     mask = cv.inRange(hsv, np.array([hmin, satmin, valmin]), np.array([hmax, satmax, valmax]))

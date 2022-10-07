@@ -20,10 +20,10 @@ int main(void)
     // trackbars e variables para almacenar o valor dos trackbars
     cv::namedWindow("Deslizadores", cv::WINDOW_AUTOSIZE);
 
-    cv::createTrackbar("Hue min", "Deslizadores", &hmin, 255, huemin_callback);
+    cv::createTrackbar("Hue min", "Deslizadores", &hmin, 180, huemin_callback); // cambiar a 255 para traballar en outro espazo de cor
     cv::createTrackbar("Sat min", "Deslizadores", &satmin, 255, satmin_callback);
     cv::createTrackbar("Val min", "Deslizadores", &valmin, 255, valmin_callback);
-    cv::createTrackbar("Hue max", "Deslizadores", &hmax, 255, huemax_callback);
+    cv::createTrackbar("Hue max", "Deslizadores", &hmax, 180, huemax_callback); // cambiar a 255 para traballar en outro espazo de cor
     cv::createTrackbar("Sat max", "Deslizadores", &satmax, 255, satmax_callback);
     cv::createTrackbar("Val max", "Deslizadores", &valmax, 255, valmax_callback);
 
@@ -36,6 +36,8 @@ int main(void)
     
     // convertimos color
     cv::cvtColor(image, hsv, cv::COLOR_BGR2HSV);
+    // cv::cvtColor(image, hsv, cv::COLOR_BGR2Lab); // Descomentar para filtrar en lab
+    // hsv = image; // descomentar para filtrar en BGR
 
     while (1)
     {
