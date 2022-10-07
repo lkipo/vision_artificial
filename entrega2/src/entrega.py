@@ -1,7 +1,7 @@
 import cv2 as cv
 import numpy as np
 # Lemos a imaxe
-image = cv.imread('./barco.jpg')
+image = cv.imread('../barco.jpg')
 
 # Función callback. Non fai nada en este caso
 def nothing(x):
@@ -21,7 +21,6 @@ cv.createTrackbar('Value_max', 'deslizadores', 0, 255, nothing)
 
 # Bucle principal
 while(1):
-    cv.imshow('image', image) # NECESITA MODIFICACIÓN
     
     # Xestión do bucle 
     k = cv.waitKey(1) & 0xFF
@@ -46,4 +45,5 @@ while(1):
 
     res = cv.bitwise_and(image, image, mask=mask)
     
-    cv.imshow('máscara', res)
+    cv.imshow('bitwise', res)
+    cv.imshow('mascara', mask)

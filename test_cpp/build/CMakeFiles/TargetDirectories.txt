@@ -1,3 +1,0 @@
-/home/lkipo/robotica/vision/test_cpp/build/CMakeFiles/DisplayImage.dir
-/home/lkipo/robotica/vision/test_cpp/build/CMakeFiles/edit_cache.dir
-/home/lkipo/robotica/vision/test_cpp/build/CMakeFiles/rebuild_cache.dir
