@@ -214,12 +214,12 @@ class BkofLoGabor:
                 # scale_mult = np.abs(np.multiply(scale_mult, np.real(thisEO)))
                 # plt.imshow(np.real(thisEO))
                 # plt.show()
-                scale.append(np.abs(np.real(thisEO)))
+                scale.append(np.real(thisEO))
             
             bank.append(scale)
         
-        self.__bank = bank
-        return bank # matriz de bancos. PREGUNTAR A XOSE
+        self.__bank = np.array(bank)
+        # return bank # matriz de bancos. PREGUNTAR A XOSE
 
     def __lowpassfilter(self, size, cutoff, n):
         """
@@ -271,17 +271,62 @@ class BkofLoGabor:
         total = np.zeros_like(self.__total_filters[0])
         for filter in self.__total_filters:
             
-            total = cv2.add(total, ifftshift(filter)) ## PREGUNTAR A XOSE POR ESTO
+            total = cv2.add(total, ifftshift(filter))
             
         
         plt.imshow(total)
         plt.show()
         
-    def radial_symmetry(self):
-        print(self.__bank)
-        for i in range(self.norient):
-            pass
+    def roseta_corte(self, margin):
+        total = np.zeros_like(self.__total_filters[0], dtype=np.float64)
+        for filter in self.__total_filters:
+            maximo = filter.max()
+            range = cv2.inRange(filter, 0.67-margin, 0.67+margin).astype(np.float64)
+            range = range
 
+            total = cv2.add(total, ifftshift(range))
+        plt.imshow(total)
+        plt.show()
+        
+    def spacial_filters(self):
+        for filter in self.__total_filters:
+            plt.imshow(ifftshift(np.real(ifft2(filter))))
+            plt.show()
+                
+    def radial_symmetry(self):
+        mult_scale = np.zeros_like(self.__bank[0][0])
+        for i in range(self.nscale):
+        
+            scale = self.__bank[:, i]
+            mult_orientation = np.ones_like(self.__bank[0][0])
+            
+            for orient in scale:
+                mult_orientation = mult_orientation * np.abs(orient)
+            
+            # plt.imshow(mult_orientation)
+            # plt.show()
+            
+            mult_scale = np.maximum(mult_scale, mult_orientation)
+        
+        plt.imshow(mult_scale)
+        plt.show()
+        
+        cv2.imwrite('simetria.jpg', cv2.normalize(mult_scale, np.zeros_like(mult_scale), 0, 255, cv2.NORM_MINMAX))
+            
+    def reconstruct(self):
+        total = np.zeros_like(self.__bank[0][0])
+        for i in self.__bank:
+            for filter in i:
+                total = total + filter
+                
+        plt.imshow(total, 'gray')
+        plt.show()
+
+    def local_energy(self):
+        total = np.zeros_like(self.__bank[0])
+        for filter in self.__bank:
+            print(filter)
+    
 def main(args):
 
     #Lemos a imaxe en formato gris e visualizamos
@@ -291,22 +336,26 @@ def main(args):
         exit(0)
 
 
-    #Construimos os filtros cos parametros que definen
-    #o banco de filtros logGabor (cobertura espectral) e
+    # Construimos os filtros cos parametros que definen
+    # o banco de filtros logGabor (cobertura espectral) e
     # pasamoslle a imaxe para convolucionar os filtros coa
     # imaxe e obter as respostas pares e impates
-    Bank = BkofLoGabor(img, nscale=3, norient=4, minWaveLength=8, 
-             mult=2.1, sigmaOnf=0.55, dThetaOnSigma=2.2)
+    Bank = BkofLoGabor(img, nscale=3, norient=6, minWaveLength=8, 
+             mult=2.1, sigmaOnf=0.6, dThetaOnSigma=2)
     
-    filters = Bank.loggabor()
+    Bank.loggabor()
     # Bank.roseta()
-    Bank.radial_symmetry()
-            
+    # Bank.roseta_corte(0.02)
+    # Bank.radial_symmetry()
+    # Bank.spacial_filters()
+    # Bank.reconstruct()
+    # Bank.local_energy()
             
 if __name__ == '__main__':
     # analizamos os argumentos de entrada
     ap = argparse.ArgumentParser()
     ap.add_argument("-i", "--image", required=False, help="Imaxe de entrada", default='datatest/apolo.png')
+    ap.add_argument("-b", "--black", required=False, help="Fiduciarios de cor negra", default='False', type=bool)
     # ENGADIR ARGUMENTO PARA BLACK=FALSE/TRUE
     args = vars(ap.parse_args())
     main(args)
