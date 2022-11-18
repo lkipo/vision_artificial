@@ -323,9 +323,14 @@ class BkofLoGabor:
         plt.show()
 
     def local_energy(self):
-        total = np.zeros_like(self.__bank[0])
-        for filter in self.__bank:
-            print(filter)
+        print(self.__bank[0][0].shape)
+        total = np.zeros_like(self.__bank[0][0])
+        for scale in self.__bank:
+            for filter in scale:
+                total  = np.maximum(np.sqrt((filter.real**2)+(filter.imag**2)), total)
+            
+        plt.imshow(total)
+        plt.show()
     
 def main(args):
 
@@ -348,8 +353,8 @@ def main(args):
     # Bank.roseta_corte(0.02)
     # Bank.radial_symmetry()
     # Bank.spacial_filters()
-    # Bank.reconstruct()
-    # Bank.local_energy()
+    Bank.reconstruct()
+    Bank.local_energy()
             
 if __name__ == '__main__':
     # analizamos os argumentos de entrada

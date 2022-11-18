@@ -5,7 +5,7 @@ from scipy.fftpack import fftshift, ifftshift
 
 # Intentamos empregar a fft2 do modulo pyfftw se esta dispoñible
 try:
-    from pyfftw.interfaces.scipy_fftpack import fft2, ifft2
+    from pyfftw.interfaces.scipy_fftpack import fft2, ifft2, fftn, ifftn
 # De outra forma, executarase scipy fftpack(~2-3x mais lenta!)
 except ImportError:
     import warnings
@@ -14,9 +14,9 @@ except ImportError:
     from scipy.fftpack import fft2, ifft2
     
 
-class BkofMono:
-    def __init__(self, img, nscale=2, minWaveLength=10, mult=2.1, sigmaOnf=0.55, black=False):
-        self.img = img
+class BkofMono3D:
+    def __init__(self, imname, nscale=2, minWaveLength=10, mult=2.1, sigmaOnf=0.55, black=False):
+        self.img = []
         self.nscale = nscale
         # self.norient = norient
         self.minWaveLength = minWaveLength
@@ -27,29 +27,36 @@ class BkofMono:
         self.even = []
         self.oddx = []
         self.oddy = []
+        self.oddz = []
+
+        self.IMF = []
+        cap = cv.VideoCapture('datatest/videos/SCE_circulos_girando_3.avi')
         
-        self.imgresponse = []
+        while cap.isOpened():
+            ret, frame = cap.read()
+            if not ret:
+                print("Can't receive frame (stream end?). Exiting ...")
+                break
+            
+            image = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+            
+            #Cambiamos tipo da matriz da imaxe
+            if image.dtype not in ['float32', 'float64']:
+                image = np.float64(image)
+
+            if image.ndim == 3:   #se e de cor promedio as bandas
+                image = image.mean(2)
+
+            if self.black:
+                image = cv.bitwise_not(image)
+
+            self.img.append(image)
+            
+    def filters3D(self):
+        VIDF = fftn(self.img)
+        self.IMF = VIDF
+        rows, cols, frames = VIDF.shape
         
-    def monogenic(self):
-
-        #Cambiamos tipo da matriz da imaxe
-        if self.img.dtype not in ['float32', 'float64']:
-            self.img = np.float64(self.img)
-
-        if self.img.ndim == 3:   #se e de cor promedio as bandas
-            self.img = self.img.mean(2)
-
-        if self.black:
-            self.img = cv.bitwise_not(self.img)
-        #Uns parametros iniciais que precisamos
-        rows, cols = self.img.shape
-
-        # Achamos a transformda de Fourier da imaxe de entrada
-        IM = fft2(self.img) 
-
-        # Convertimos as coordenadas cartesianas do espectro de Fourier
-        # a coordenadas polares planas (radio, angulo)
-        # Inicializamos as matrices X e Y con rangos normalizados entre +/- 0.5
         if (cols % 2):
             xvals = np.arange(-(cols - 1) / 2.,
                             ((cols - 1) / 2.) + 1) / float(cols - 1)
@@ -62,60 +69,32 @@ class BkofMono:
         else:
             yvals = np.arange(-rows / 2., rows / 2.) / float(rows)
 
-        x, y = np.meshgrid(xvals, yvals, sparse=True)
+        if (rows % 2):
+            zvals = np.arange(-(frames - 1) / 2.,
+                            ((frames - 1) / 2.) + 1) / float(frames - 1)
+        else:
+            zvals = np.arange(-frames / 2., frames / 2.) / float(frames)
 
-        #coordendas planas: radio e angulo polar (sentido antihorario)
-        radius = np.sqrt(x * x + y * y)
-        theta = np.arctan2(-y, x)
-
-        # Desprazamento de cuadrantes de  radius e theta para construir 
-        # os filtros coa frecuencia 0 nas esquinas (formatos datos de fft2())
-        radius = ifftshift(radius)
-        theta = ifftshift(theta)
-
-        # Como traballaremos con Gabor logaritmicas non pode
-        # haber puntos nulos pola indeterminación da funcion logaritmo.
-        # Polo tanto, que o orixe o cambiamos a 1 para que o log(1)=0.
+        x, y, z = np.meshgrid(xvals, yvals, zvals, sparse=True)
+        
+        # print(x)
+        radius = np.sqrt(x*x + y*y + z*z)
+        # theta = np.arccos(z/radius)
+        # phi = np.arctan2(y, x)
+        # print(theta.shape)
+        # radius = ifftshift(radius)
+        # theta = ifftshift(theta)
+        # phi = ifftshift(phi)
+        
         radius[0, 0] = 1.
+        # print(x, y, z)
+        # print(VIDF.shape)
+        
+        # sintheta = np.sin(theta) ##POSIBLE SOBRANTE
+        lp = self.__lowpassfilter((rows, cols, frames), .45, 15)
 
-        #Achamos os senos e os cosenos en cada punto do especto correpondente
-        sintheta = np.sin(theta)
-        costheta = np.cos(theta)
-        print(theta)
-        del x, y, theta #Libremos algo de memoria
-
-        # Iniciamos a construcion dun banco de filtros log-Gabor 
-        # a diferentes orientacions e escalas 
-
-        # Os filtros son separables en duas compoñentes:
-        # 1) A compoñente even, controla o ancho de bando do filtro e a frecuencia
-        #   central a que responderá o filtro
-        #    
-        # 2) A compoñenete angular, que controla a orientación a que responde o filtro
-
-        # O filtro logGabor se construe multiplicando as dúas compeñentes 
-        # e o filtro queda conformado no espazo de Fourier
-
-        # Parte even do filtro... 
-        # Primeiro construimos un filtro paso-baixo tan grande como sexa 
-        # posible en función das dimensións da imaxe de entrada (mostras espectrais)
-        # e que caia a cero nos bordes espectrais. Este filtro será multiplicado
-        # por todos os logGabor para evitar truncamentos bruscos e evitar asi o
-        # fenomeno do anillado (ringing) como vimos na teoría
-
-        # filtro paso-baixo e parametros aceptables: radius .45, 'sharpness' 15
-        lp = self.__lowpassfilter((rows, cols), .45, 15)
-
-        #Denominador da exponencia even do logGabor
         logGaborDenom = 2. * np.log(self.sigmaOnf) ** 2.
 
-        #Sigma da parte angular en funcion do numro 
-        # de otientacion e o parametro self.dThetaOnSigma. 
-        #Este parametro regula a superposicion angular
-        # thetaSigma = np.pi / self.norient / self.dThetaOnSigma
-        # LogGaborAngularDenom = 2. * thetaSigma ** 2
-
-        #Lazo para percorrer as escalas fixadas
         for ss in range(self.nscale):
             #longura de onda para cada escala onde mult é 
             #a distancia entre filtros experado en octavas 1 octava = log2(w1/w2)
@@ -127,30 +106,68 @@ class BkofMono:
             # log Gabor
             logRadOverFo = np.log(radius / fo)
             even = np.exp(-(logRadOverFo * logRadOverFo) / logGaborDenom)
-
+            # print('shaperadius', radius.shape)
+            # print('shapelp', lp.shape)
+            # print('shapeeven', even.shape)
+            
             # Aplicamos o filtro paso-baixo para evitar o anillado
             even = even * lp
             # Aseguramonos de que o punto de frecuenca o vale cero!
             even[0, 0] = 0.
-            # print(costheta)
-            scaleresponse = []
             
             self.even.append(even)
-            scaleresponse.append(even*IM)
+            self.oddx.append(1j*(x/radius)*even) # 1j*(x/radius)*even
+            self.oddy.append(1j*(y/radius)*even)
+            self.oddz.append(1j*(z/radius)*even)
             
-            filterx = 1j*costheta*even
-            scaleresponse.append(filterx*IM)
-            self.oddx.append(filterx)
-            
-            filtery = 1j*sintheta*even
-            scaleresponse.append(filtery*IM)
-            self.oddy.append(filtery)
-            
-            self.imgresponse.append(scaleresponse)
-            
-            
+    def getfilters(self):
         
+        for filter in self.even:
+            for frame in filter:
+                cv.imshow('Even 1', (ifftn(frame).real))
+                cv.waitKey(30)
+
+        for filter in self.oddx:
+            for frame in filter:
+                cv.imshow('odd 1', (ifftn(frame).real))
+                cv.waitKey(30)
+
+        for filter in self.oddz:
+            for frame in filter:
+                cv.imshow('odd 2', (ifftn(frame).real))
+                cv.waitKey(30)
+
+        for filter in self.oddz:
+            for frame in filter:
+                cv.imshow('odd 3', (ifftn(frame).real))
+                cv.waitKey(30)
+
+    def getvideoresponse(self):
         
+        for filter in self.even:
+            conv = self.IMF * filter
+            for frame in conv:
+                cv.imshow('Even 1', (ifftn(frame).real))
+                cv.waitKey(30)
+
+        for filter in self.oddx:
+            conv = self.IMF * filter
+            for frame in conv:
+                cv.imshow('odd 1', (ifftn(frame).real))
+                cv.waitKey(30)
+
+        for filter in self.oddz:
+            conv = self.IMF * filter
+            for frame in conv:
+                cv.imshow('odd 2', (ifftn(frame).real))
+                cv.waitKey(30)
+
+        for filter in self.oddz:
+            conv = self.IMF * filter
+            for frame in conv:
+                cv.imshow('0dd 3', (ifftn(frame).real))
+                cv.waitKey(30)
+            
     def showFrecFilters(self):
         for filter in self.even:
             plt.imshow(filter)
@@ -177,12 +194,6 @@ class BkofMono:
             plt.imshow(ifftshift(np.real(ifft2(filter))))
             plt.show()
 
-    def showFilterResponse(self):
-        for scale in self.imgresponse:
-            for img in scale:
-                plt.imshow(ifft2(img).real)
-                plt.show()
-
     def __lowpassfilter(self, size, cutoff, n):
         """
         Construimos un filtro paso-baixa de Butterworth con función de transferencia:
@@ -206,7 +217,7 @@ class BkofMono:
         if len(size) == 1:
             rows = cols = size
         else:
-            rows, cols = size
+            rows, cols, frames = size
 
         #Comprobamos a paridade de filas e columnas para construir a grella
         # para determinar a parte even de cada punto no espazo frecuencial
@@ -222,9 +233,15 @@ class BkofMono:
                             ((rows - 1) / 2.) + 1) / float(rows - 1)
         else:
             yvals = np.arange(-rows / 2., rows / 2.) / float(rows)
+            
+        if (frames % 2):
+            zvals = np.arange(-(frames - 1) / 2.,
+                            ((frames - 1) / 2.) + 1) / float(frames - 1)
+        else:
+            zvals = np.arange(-frames / 2., frames / 2.) / float(frames)
 
-        x, y = np.meshgrid(xvals, yvals, sparse=True)
-        radius = np.sqrt(x * x + y * y)
+        x, y, z = np.meshgrid(xvals, yvals, zvals, sparse=True)
+        radius = np.sqrt(x*x + y*y + z*z)
 
         return ifftshift(1. / (1. + (radius / cutoff) ** (2. * n)))
 
@@ -233,11 +250,13 @@ def main():
     #Lemos a imaxe en formato gris e visualizamos
     img = cv.imread('datatest/apolo.png',0)
 
-    Bank = BkofMono(img)
-    Bank.monogenic()
+    Bank = BkofMono3D(img)
+    Bank.filters3D()
+    Bank.getvideoresponse()
+    # Bank.getfilters()
+    # Bank.loggabor()
     # Bank.showSpaceFilters()
     # Bank.showFrecFilters()
-    Bank.showFilterResponse()
-        
+    
 if __name__ == '__main__':
     main()
