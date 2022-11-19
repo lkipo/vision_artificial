@@ -219,7 +219,6 @@ class BkofLoGabor:
             bank.append(scale)
         
         self.__bank = np.array(bank)
-        # return bank # matriz de bancos. PREGUNTAR A XOSE
 
     def __lowpassfilter(self, size, cutoff, n):
         """
@@ -277,7 +276,7 @@ class BkofLoGabor:
         plt.imshow(total)
         plt.show()
         
-    def roseta_corte(self, margin):
+    def roseta_corte(self, margin=0.02):
         total = np.zeros_like(self.__total_filters[0], dtype=np.float64)
         for filter in self.__total_filters:
             maximo = filter.max()
@@ -292,7 +291,13 @@ class BkofLoGabor:
         for filter in self.__total_filters:
             plt.imshow(ifftshift(np.real(ifft2(filter))))
             plt.show()
-                
+
+    def image_conv(self):
+        for i in self.__bank:
+            for filter in i:
+                plt.imshow(filter)
+                plt.show()
+                   
     def radial_symmetry(self):
         mult_scale = np.zeros_like(self.__bank[0][0])
         for i in range(self.nscale):
@@ -322,16 +327,27 @@ class BkofLoGabor:
         plt.imshow(total, 'gray')
         plt.show()
 
-    def local_energy(self):
-        print(self.__bank[0][0].shape)
-        total = np.zeros_like(self.__bank[0][0])
-        for scale in self.__bank:
+    def localeg_orient(self):
+        print(self.__bank.shape)
+        for orient in self.__bank:
+            total = np.zeros_like(self.__bank[0][0])
+            for filter in orient:
+                total  = np.maximum(np.sqrt((filter.real**2)+(filter.imag**2)), total)
+            
+            plt.imshow(total)
+            plt.show()
+    
+    def localeg_scale(self):
+        print(len(self.__bank[0]))
+        for i in range(len(self.__bank[0])):
+            total = np.zeros_like(self.__bank[0][0])
+            scale = self.__bank[:,i,:,:]
             for filter in scale:
                 total  = np.maximum(np.sqrt((filter.real**2)+(filter.imag**2)), total)
             
-        plt.imshow(total)
-        plt.show()
-    
+            plt.imshow(total)
+            plt.show()
+
 def main(args):
 
     #Lemos a imaxe en formato gris e visualizamos
@@ -349,9 +365,9 @@ def main(args):
              mult=2.1, sigmaOnf=0.6, dThetaOnSigma=2)
     
     Bank.loggabor()
-    # Bank.roseta()
+    Bank.roseta()
     # Bank.roseta_corte(0.02)
-    # Bank.radial_symmetry()
+    Bank.radial_symmetry()
     # Bank.spacial_filters()
     Bank.reconstruct()
     Bank.local_energy()
