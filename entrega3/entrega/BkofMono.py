@@ -148,9 +148,15 @@ class BkofMono:
             
             self.imgresponse.append(scaleresponse)
             
+    def cobertura(self):
+        
+        total = np.zeros_like(self.even[0])
+        for filt in self.even:
+            total = filt + total
             
-        
-        
+        plt.imshow(total)
+        plt.show()
+
     def showFrecFilters(self):
         for filter in self.even:
             plt.imshow(filter)
@@ -183,6 +189,9 @@ class BkofMono:
                 plt.imshow(ifft2(img).real)
                 plt.show()
 
+    def localEnergy(self):
+        pass
+        
     def __lowpassfilter(self, size, cutoff, n):
         """
         Construimos un filtro paso-baixa de Butterworth con función de transferencia:
