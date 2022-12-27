@@ -29,15 +29,18 @@ def radialFunc(img):
         
     return distances  
 
-def fourier(img):
+def contourDesc(img):
+    pass
+    
+def fourierDesc(img, order):
     contours, hierarchy = cv.findContours(img, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
     
     coeffs = []
     
     for cnt in contours:
-        coeffs.append(elliptic_fourier_descriptors(np.squeeze(cnt), order = 10))
+        coeffs.append(elliptic_fourier_descriptors(np.squeeze(cnt), order = order))
     
-    print(coeffs)
+    return coeffs
     
 if __name__=='__main__':
     image = cv.imread('practica6/entrega/test.png', 0)
@@ -46,5 +49,5 @@ if __name__=='__main__':
     # inv = cv.invert(thresh)
     print(radialFunc(inv))
     
-    fourier(inv)
+    fourierDesc(inv, 10)
 
