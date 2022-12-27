@@ -4,9 +4,7 @@ from random import randint, random
 def getMask(img):
     img = cv.bitwise_not(img)
     ret, thresh = cv.threshold(img, 127, 255, 0)
-    inv = cv.bitwise_not(thresh)
-    cv.imshow('ventadddna', thresh)
-    cv.waitKey(100)
+
     return thresh
 
 def genImage(img, angle, center, scale, size = (800, 800)):
