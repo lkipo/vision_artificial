@@ -39,7 +39,7 @@ def fourierDesc(img, odr):
     
     return coeffs.flatten()[3:]
     
-def saveDesc(path, n_descritores):
+def saveDesc(path, n_descritores, name = 'fourier.csv'):
     descritores = []
     for i in range(8192):
         # print(i)
@@ -60,7 +60,7 @@ def saveDesc(path, n_descritores):
     labels = ['X' + str(i) for i in range((n_descritores*4)-3)]
     labels.append('Y')
     desc_df = pd.DataFrame(descritores, columns=labels)
-    desc_df.to_csv('algo.csv', index=False)    
+    desc_df.to_csv(name, index=False)    
     
 if __name__=='__main__':
     image = cv.imread('test.png', 0)
