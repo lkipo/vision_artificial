@@ -62,11 +62,25 @@ def saveDesc(path, n_descritores, name = 'fourier.csv'):
     desc_df = pd.DataFrame(descritores, columns=labels)
     desc_df.to_csv(name, index=False)    
     
-if __name__=='__main__':
-    image = cv.imread('test.png', 0)
-    ret, thresh = cv.threshold(image, 127, 255, 0)
-    inv = cv.bitwise_not(thresh)
-    cv.imshow('ventana', inv)
-    cv.waitKey(1000)
-    print(fourierDesc(inv, 10))
+def hu(contour):
+    return cv.HuMoments(cv.moments(contour))
 
+def saveHu(path, name = 'hu.csv'):
+    for i in range(8192):
+
+        image = cv.imread(path + str(i) + ".png", 0)
+        ret, thresh = cv.threshold(image, 127, 255, 0)
+        
+        if image.size == None:
+            print('erro na lectura', path + str(i) + ".png")
+            exit(1)
+        
+
+
+# if __name__=='__main__':
+#     image = cv.imread('test.png', 0)
+#     ret, thresh = cv.threshold(image, 127, 255, 0)
+#     inv = cv.bitwise_not(thresh)
+#     cv.imshow('ventana', inv)
+#     cv.waitKey(1000)
+#     print(fourierDesc(inv, 10))
