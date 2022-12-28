@@ -1,5 +1,5 @@
 import cv2 as cv
-from random import randint, random
+from random import randint, uniform
 
 def getMask(img):
     img = cv.bitwise_not(img)
@@ -21,9 +21,9 @@ if __name__=='__main__':
     for i in range(8):
         image = cv.imread('plane' + str(i) + '.png')
         mask = getMask(image)
-        for j in range(16):
+        for j in range(64):
             angle = randint(0, 359)
-            scale = random()
+            scale = uniform(0.2, 1)
             print(scale)
             # x = randint(((-1+scale)*400)//1, ((1-scale*400))//1) + 400
             # y = randint(((-1+scale)*400)//1, ((1-scale*400))//1) + 400
