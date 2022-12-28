@@ -7,8 +7,9 @@ import numpy as np
 path_to_imgs = '../planeDataset/randGen/'
 
 descritores = []
-for i in range(512):
-    print(i)
+n_descritores = 9
+for i in range(2048):
+    # print(i)
     image = cv.imread(path_to_imgs + str(i) + ".png", 0)
     ret, thresh = cv.threshold(image, 127, 255, 0)
     
@@ -16,15 +17,15 @@ for i in range(512):
         print('erro na lectura', path_to_imgs + str(i) + ".png")
         exit(1)
     
-    cv.imshow('ventana', image)
+    # cv.imshow('ventana', image)
     # cv.waitKey(10)
-    descritores.append(np.append(fn.fourierDesc(thresh, 2), i//64))
+    descritores.append(np.append(fn.fourierDesc(thresh, n_descritores), i//256))
     
     # chapuza incoming
     
-    
-print(np.squeeze(descritores))
-desc_df = pd.DataFrame(descritores, columns=['X0', 'X1', 'X2', 'X3', 'X4', 'Y'])
-# desc_df = pd.DataFrame(descritores, columns=['X0', 'X1', 'X2', 'X3', 'X4', 'X5', 'X6', 'X7', 'X8', 'X9', 'X10', 'X11', 'X12', 'X13', 'X14', 'X15', 'X16', 'Y'])
-desc_df.to_csv('algo.csv', index=False)
-    
+if __name__=='__main__':  
+    # print(np.squeeze(descritores))
+    labels = ['X' + str(i) for i in range((n_descritores*4)-3)]
+    labels.append('Y')
+    desc_df = pd.DataFrame(descritores, columns=labels)
+    desc_df.to_csv('algo.csv', index=False)    

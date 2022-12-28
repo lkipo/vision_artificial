@@ -1,5 +1,6 @@
 import cv2 as cv
 import numpy as np
+import pandas as pd
 from pyefd import elliptic_fourier_descriptors
 
 ### NOTAS IMPORTANTES:
@@ -37,6 +38,29 @@ def fourierDesc(img, odr):
     coeffs = elliptic_fourier_descriptors(np.squeeze(contours[0]), order = odr, normalize=True)
     
     return coeffs.flatten()[3:]
+    
+def saveDesc(path, n_descritores):
+    descritores = []
+    for i in range(8192):
+        # print(i)
+        image = cv.imread(path + str(i) + ".png", 0)
+        ret, thresh = cv.threshold(image, 127, 255, 0)
+        
+        if image.size == None:
+            print('erro na lectura', path + str(i) + ".png")
+            exit(1)
+        
+        # cv.imshow('ventana', image)
+        # cv.waitKey(10)
+        descritores.append(np.append(fourierDesc(thresh, n_descritores), i//1024))
+    
+    # chapuza incoming
+    
+    # print(np.squeeze(descritores))
+    labels = ['X' + str(i) for i in range((n_descritores*4)-3)]
+    labels.append('Y')
+    desc_df = pd.DataFrame(descritores, columns=labels)
+    desc_df.to_csv('algo.csv', index=False)    
     
 if __name__=='__main__':
     image = cv.imread('test.png', 0)

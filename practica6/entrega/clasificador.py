@@ -1,6 +1,10 @@
 import main as by
+import funcion as fn
 
 if __name__=='__main__':
+    #actualizamos o CSV
+    fn.saveDesc('../planeDataset/randGen/', 10)
+    print('sexo')
     path = 'algo.csv'
     rawData = by.load_data(path)
     data = by.Data(rawData, bias=False)
