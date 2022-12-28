@@ -17,6 +17,7 @@ def genImage(img, angle, center, scale, size = (800, 800)):
     return rot
     
 if __name__=='__main__':
+    count = 0
     for i in range(8):
         image = cv.imread('plane' + str(i) + '.png')
         mask = getMask(image)
@@ -31,4 +32,5 @@ if __name__=='__main__':
             x = randint((400*scale)//1, 800-(400*scale)//1)
             y = randint((400*scale)//1, 800-(400*scale)//1)
             transf = genImage(mask, angle, (x, y), scale)
-            cv.imwrite(str(i)+str(j)+".jpg", transf)
+            cv.imwrite("randGen/" + str(count)+ ".png", transf)
+            count += 1

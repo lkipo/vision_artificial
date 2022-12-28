@@ -32,22 +32,17 @@ def radialFunc(img):
 def contourDesc(img):
     pass
     
-def fourierDesc(img, order):
+def fourierDesc(img, odr):
     contours, hierarchy = cv.findContours(img, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
+    coeffs = elliptic_fourier_descriptors(np.squeeze(contours[0]), order = odr, normalize=True)
     
-    coeffs = []
-    
-    for cnt in contours:
-        coeffs.append(elliptic_fourier_descriptors(np.squeeze(cnt), order = order))
-    
-    return coeffs
+    return coeffs.flatten()[3:]
     
 if __name__=='__main__':
-    image = cv.imread('practica6/entrega/test.png', 0)
+    image = cv.imread('test.png', 0)
     ret, thresh = cv.threshold(image, 127, 255, 0)
     inv = cv.bitwise_not(thresh)
-    # inv = cv.invert(thresh)
-    print(radialFunc(inv))
-    
-    fourierDesc(inv, 10)
+    cv.imshow('ventana', inv)
+    cv.waitKey(1000)
+    print(fourierDesc(inv, 10))
 
